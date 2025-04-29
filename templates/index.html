@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Номера телефонов</title>
+    <style>
+        body {
+            font-family: Candara, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffe5f7;
+        }
+        h1 {
+            text-align: center;
+        }
+        .search-box {
+            text-align: center;
+            margin: 30px 0;
+        }
+        input[type="text"] {
+            font-family: Candara, sans-serif;
+            padding: 8px;
+            width: 200px;
+            background-color: #f9ddf1;
+        }
+        button {
+            font-family: Candara, sans-serif;
+            padding: 8px 20px;
+            background-color: #fbace5;
+        }
+        button:hover{
+            background-color: #fb7ed8;
+        }
+
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+        .number {
+            padding: 5px;
+            text-align: center;
+        }
+        .number a {
+            text-decoration: none;
+            color: #cc008b;
+        }
+        .number a:hover {
+            color: #990069;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Номера телефонов</h1>
+
+    <div class="search-box">
+        <form action="/search" method="post">
+            <input type="text" name="phone_number" placeholder="Введите номер телефона">
+            <button type="submit">Поиск</button>
+        </form>
+    </div>
+
+    <h2>Список номеров телефонов</h2>
+    <div class="numbers-grid">
+        {% for number in phone_numbers %}
+            <div class="number">
+                <a href="{{ url_for('phone_info', number=number) }}">{{ number }}</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
