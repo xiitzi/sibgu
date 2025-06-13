@@ -13,6 +13,9 @@ def generate_phone_numbers():
 
 phone_numbers = generate_phone_numbers()
 
+#print('Hellow, world!') hihihih
+#print('meowmeowmeow') yes?
+
 @app.route('/')
 def index():
     return render_template('index.html', phone_numbers=phone_numbers)
