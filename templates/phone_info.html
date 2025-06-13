@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Информация о номерах телефонов</title>
+    <style>
+        body {
+            font-family: Candara, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9ddf1;
+        }
+        .info-box {
+            border: 3px dashed #fb83d9;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .back-link {
+            font-family: Candara, sans-serif;
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            color: #990069;
+        }
+    </style>
+</head>
+<body>
+    <h1>Информация о номере телефона</h1>
+
+    <div class="info-box">
+        <h2>Детальная информация о номере телефона:</h2>
+        <p>{{ number }}</p>
+    </div>
+
+    <a href="{{ url_for('index') }}" class="back-link">Главная страница</a>
+</body>
+</html>
